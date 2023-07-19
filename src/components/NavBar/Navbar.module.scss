@@ -1,0 +1,77 @@
+@import 'styles/breakpoints.scss';
+
+.nav {
+  background-color: white;
+  margin-top: 20px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+  padding: 0 80px;
+
+  position: absolute;
+  width: 50vw;
+  z-index: 1;
+  @media(max-width: $tablet) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    width: 100vw;
+  }
+  @media(max-width: $mobile-sm) {
+    padding: 0 50px;
+  }
+}
+
+.logo {
+  cursor: pointer;
+  grid-area: logo;
+  width: 10em;
+  height: 10em;
+}
+
+.links {
+  grid-area: links;
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  @media(max-width: $tablet) {
+    justify-self: start;
+  }
+}
+
+.link {
+  color: rgb(153, 153, 153);
+  font-size: 15px;
+  margin-right: 15px;
+  font-family: 'Inconsolata', monospace;
+}
+
+.busca {
+  align-items: center;
+  display: flex;
+  grid-area: busca;
+  width: 100%;
+  margin-left: 40px;
+  
+}
+
+.selected {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.icones {
+  display: flex;
+  gap: 20px;
+  grid-area: icones;
+  margin-left: 30px;
+}
+
+
+.container{
+  display: flex;
+  justify-content: center;
+}

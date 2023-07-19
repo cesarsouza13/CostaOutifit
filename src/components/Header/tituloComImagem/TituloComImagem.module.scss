@@ -1,0 +1,52 @@
+@import 'styles/breakpoints';
+
+.header {
+  display: grid;
+  grid-template-areas: 'texto imagem';
+  grid-template-columns: 1fr 2fr;
+  justify-content: space-between;
+  margin-top: 40px;
+  @media(max-width: $tablet) {
+    gap: 20px;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: 'texto' 'imagem';
+    text-align: center;
+  }
+  &-texto {
+    color: white;
+    grid-area: texto;
+    h1 {
+      font-size: 60px;
+      margin-top: 0;
+      margin-bottom: 2em;
+    }
+    h2 {
+        
+      font-size: 30px;
+      margin-top: 0;
+      margin-bottom: 2em;
+    }
+
+    p{
+        font-family: 'Inconsolata', monospace;
+    }
+  }
+  &-button {
+    display: flex;
+    @media(max-width: $tablet) {
+      justify-content: center;
+    }
+  }
+  &-imagem {
+    align-self: center;
+    grid-area: imagem;
+    justify-self: center;
+    overflow: hidden;
+    max-width: 700px;
+    img {
+      border-radius: 144px;
+      width: 100%;
+    }
+  }
+}

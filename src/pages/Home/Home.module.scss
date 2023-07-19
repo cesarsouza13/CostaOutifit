@@ -1,0 +1,71 @@
+.header {
+    padding-bottom: 250px;
+  }
+  
+  .categorias {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 0 100px 0;
+    transform: translateY(-250px);
+    h1 {
+      color: white;
+      font-size: 40px;
+    }
+    &-container {
+      margin-top: 80px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 50px;
+      justify-content: center;
+      top: calc(100% - 150px);
+      width: 90%;
+      > div {
+        align-items: center;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        h1 {
+          color: #041833;
+          font-size: 25px;
+        }
+        > img {
+          border-radius: 144px;
+        }
+      }
+    }
+  }
+
+
+
+  .novidades{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+ 
+  }
+
+  .itens{
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 1s, transform 1s;
+  }
+
+  .visible{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    margin: 50px 50px;
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .titulo{
+    text-align: center;
+    margin: 20px;
+    padding: 16px;
+    font-size: 34px;
+}
+
+  

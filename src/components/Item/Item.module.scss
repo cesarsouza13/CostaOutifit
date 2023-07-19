@@ -1,0 +1,94 @@
+.item {
+    background-color: white;
+    border: none;
+    display: flex;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.08));
+    flex-direction: column;
+    width: 335px;
+    
+    overflow: hidden;
+    &-descricao {
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
+    }
+    &-titulo {
+      padding: 16px 16px 0 16px;
+      h2 {
+        color: #000000;
+        font-size: 20px;
+      }
+      p {
+        color: #919191;
+      }
+    }
+  
+    &-imagem {
+      margin: 0 auto;
+      width: 335px;
+      height: 313px;
+    }
+    
+    &-imagem img{
+        width: 100%;
+        height: 100%;
+    }
+  
+    &-info {
+      display: flex;
+      justify-content: space-between;
+    }
+  
+    &-preco {
+      align-items: center;
+      background-color: #ffffff;
+      color: rgb(0, 0, 0);
+      display: flex;
+      font-size: 20px;
+      padding: 0px 16px 16px 16px;
+      width: 170px;
+    }
+    &-acoes {
+      align-items: center;
+      display: flex;
+      flex: 1;
+      justify-content: end;
+      padding-right: 10px;
+      padding: 0px 16px 16px 16px;
+     
+    }
+  
+    &-acao {
+      align-items: center;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin-right: 10px;
+    }
+  }
+  
+  .itemNoCarrinho {
+    align-items: center;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .quantidade {
+      align-items: center;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      svg {
+        cursor: pointer;
+      }
+    }
+    .item-acoes {
+      gap: 50px;
+      justify-content: flex-end;
+      padding: 0 50px;
+    }
+  }

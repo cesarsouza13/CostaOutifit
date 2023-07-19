@@ -1,0 +1,15 @@
+.itens {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    margin: 50px 50px;
+  }
+
+.titulo{
+    text-align: center;
+    margin: 20px;
+    padding: 16px;
+    font-size: 34px;
+}
+

@@ -1,0 +1,41 @@
+
+
+.banner{
+    width: 1920px;
+    height: 600px;
+    background-image: url('/assets/fundo.jpg');
+    display: flex;
+
+    &-container{
+        margin-left: 5em;
+        flex-direction: column;
+        gap: 30px;
+        padding: 50px 100px;
+
+        }
+
+    h2{
+        color: white;
+        font-size: 35px;
+        
+    }
+    p{
+        
+        font-family: 'Inconsolata', monospace;
+        color: white;
+    }
+
+   
+    button{
+        margin-top: 2em;
+        background-color: #041833;
+        border-radius: 36px;
+        color: white;
+        cursor: pointer;
+        font-size: 24px;
+        padding: 20px 50px;
+        font-family: 'Bebas Neue', sans-serif; ;
+        }
+
+    
+}
