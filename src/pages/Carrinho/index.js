@@ -2,7 +2,7 @@ import Header from '../../components/Header/index.js'
 import styles from './Carrinho.module.scss'
 import { useSelector, useDispatch} from 'react-redux'
 import Item from '../../components/Item/index.js';
-import { resetarCarrinho } from 'store/reducers/carrinho';
+import { resetarCarrinho } from '../../store/reducers/carrinho.js';
 export default function Carrinho(){
     
     const dispatch = useDispatch()

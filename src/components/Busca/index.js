@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import styles from './Busca.module.scss'
 import { useSelector, useDispatch } from 'react-redux'
-import { mudarBusca, resetarBusca } from 'store/reducers/busca'
+import { mudarBusca, resetarBusca } from '../../store/reducers/busca.js'
 import { useLocation } from 'react-router-dom'
 import { BiSearchAlt } from 'react-icons/bi';
 
