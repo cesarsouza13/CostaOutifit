@@ -14,6 +14,11 @@ const iconeProps = {
     size: 20
 }
 
+const iconePropsBusca = {
+    color: 'white',
+    size: 20
+}
+
 export default function Navbar(){
     const location = useLocation()
     const navigate = useNavigate()
@@ -23,7 +28,7 @@ return(
     <nav className={styles.nav}>
 
         <div className={styles.links}>
-            <div className={styles.container}>
+            <div >
                 <Link to='/' className={classNames(styles.link,{
                     [styles.selected]: window.location.pathname === '/'
                 })}>
@@ -39,22 +44,23 @@ return(
                 })}>
                     Sneakers
                 </Link>
-                <div className={styles.icones}>
-                    <Link to='/carrinho'>
+            </div>
+          
+          
+        </div>
+
+        <div className={styles.icones}>
+                    <Busca />
+                    <Link to='/carrinho' className={styles.iconeCarrinho}>
                         {location.pathname === '/carrinho'
                         ? <RiShoppingCartFill {...iconeProps} />
                         : <RiShoppingCart2Line {...iconeProps} />
                         }
                    
                     </Link>
-                    <BiSearchAlt {...iconeProps} />
-                </div>
+                 
             </div>
-        </div>
-        <div className={styles.busca}>
-        <Busca />
-        </div>
-       
+      
     </nav>
    
     </div>

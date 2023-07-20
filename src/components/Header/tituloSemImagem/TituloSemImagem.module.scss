@@ -1,3 +1,5 @@
+@import 'styles/breakpoints';
+
 .container {
     align-items: center;
     display: flex;
@@ -16,3 +18,28 @@
     font-size: 25px;
     font-weight: 400;
   }
+
+
+  
+@media screen and (max-width: 1400px) {
+
+  .container{
+    height: 200px;
+    padding: 100px 520px 0 0;
+  
+  }
+
+
+
+
+}
+
+
+@media screen and (max-width: $mobile-sm){
+  .container{
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    
+  }
+}

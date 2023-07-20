@@ -7,18 +7,16 @@ FaWhatsapp
 const iconeProps = {
     color: 'white',
     size: 24,
+    cursor: 'pointer'
 }
 
 export default function Footer(){
     return(
         <footer className={styles.footer}>
-            <div>
+            <div >
                 <FaInstagram {...iconeProps} />
                 <FaWhatsapp {...iconeProps} />
             </div>
-            <span>
-            Developed by César Souza
-            </span>
             
             
         </footer>

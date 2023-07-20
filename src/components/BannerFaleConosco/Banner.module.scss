@@ -1,5 +1,5 @@
 
-
+@import 'styles/breakpoints';
 .banner{
     width: 1920px;
     height: 600px;
@@ -10,32 +10,87 @@
         margin-left: 5em;
         flex-direction: column;
         gap: 30px;
-        padding: 50px 100px;
+        padding: 10px 100px;
 
         }
 
     h2{
         color: white;
-        font-size: 35px;
+        font-size: 70px;
         
     }
     p{
         
         font-family: 'Inconsolata', monospace;
+        font-size: 25px;
         color: white;
     }
 
    
     button{
         margin-top: 2em;
-        background-color: #041833;
+        background-color: #ffffff;
         border-radius: 36px;
-        color: white;
+        color: #262626;
         cursor: pointer;
         font-size: 24px;
         padding: 20px 50px;
         font-family: 'Bebas Neue', sans-serif; ;
-        }
 
-    
+        }
 }
+
+@media screen and (max-width: 1400px) {
+    .banner{
+      width: 1400px;
+      height: 400px;
+      
+      
+    &-container{
+        margin-left: 0;
+
+        }
+      
+    h1{
+        font-size: 60px;
+    
+      }
+      h2{
+        font-size: 35px;
+      }
+  
+      p{
+        font-size: 20px;
+      }
+
+      button{
+        margin-top: 1em;
+        padding: 15px 40px;
+      }
+    }
+
+  }
+
+  @media screen and (max-width: $mobile-sm){
+
+    .banner{
+        width: 100%;
+        &-container{
+            padding: 0;
+            margin-left: 25px;
+    
+            }
+
+              h2{
+                font-size: 30px;
+              }
+          
+              p{
+                font-size: 15px;
+              }
+    }
+
+        
+    
+  
+  }

@@ -2,14 +2,13 @@
 
 .nav {
   background-color: white;
-  margin-top: 20px;
+  margin-top: 60px;
   border-radius: 8px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   height: 70px;
   padding: 0 80px;
-
   position: absolute;
   width: 50vw;
   z-index: 1;
@@ -36,6 +35,7 @@
   grid-area: links;
   display: flex;
   justify-content: flex-start;
+
   gap: 20px;
   @media(max-width: $tablet) {
     justify-self: start;
@@ -65,13 +65,41 @@
 
 .icones {
   display: flex;
+  justify-self: end;
   gap: 20px;
   grid-area: icones;
   margin-left: 30px;
+}
+
+.iconeCarrinho{
+  margin-top: 10px;
 }
 
 
 .container{
   display: flex;
   justify-content: center;
+  
 }
+
+.caixabusca{
+  background: #0a1b2d;
+  height: 40px;
+padding:10px;
+border-radius: 40px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+@media screen and (max-width: $mobile-sm){
+  .link {
+
+    font-size: 18px;
+
+  }
+
+  
+  }
+
+      

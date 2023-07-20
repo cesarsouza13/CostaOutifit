@@ -17,19 +17,20 @@
     color: white;
     grid-area: texto;
     h1 {
-      font-size: 60px;
+      font-size: 70px;
       margin-top: 0;
-      margin-bottom: 2em;
+      margin-bottom: 10px;
     }
     h2 {
-        
-      font-size: 30px;
-      margin-top: 0;
-      margin-bottom: 2em;
+      font-size: 40px;
+      margin: 10px 0 50px 0;
+ 
     }
 
     p{
         font-family: 'Inconsolata', monospace;
+        font-size: 25px;
+        
     }
   }
   &-button {
@@ -43,10 +44,77 @@
     grid-area: imagem;
     justify-self: center;
     overflow: hidden;
-    max-width: 700px;
+    max-width: 520px;
+    max-height: 650px;
     img {
       border-radius: 144px;
       width: 100%;
     }
   }
+}
+
+@media screen and (max-width: 1400px) {
+
+  .header{
+    padding: 100px 300px 0 80px;
+   }
+  .header-imagem {
+
+    max-width: 400px;
+    max-height: 650px;
+    padding-bottom: 5em;
+
+
+ 
+  }
+
+  .header-texto{
+  
+    h1{
+      font-size: 60px;
+    }
+    h2{
+      font-size: 35px;
+    }
+
+    p{
+      font-size: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: $mobile-sm){
+  .header{
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    
+  }
+  .header-imagem, .header-texto{
+
+    width: 100%;
+    margin: 10px 0;
+
+ 
+  }
+
+  .header-imagem{
+    display: none;
+  }
+
+  .header-texto{
+
+    text-align: center;
+    h1{
+      font-size: 60px;
+    }
+    h2{
+      font-size: 35px;
+    }
+
+    p{
+      font-size: 20px;
+    }
+  }
+
 }

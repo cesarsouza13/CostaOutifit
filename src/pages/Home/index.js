@@ -52,9 +52,6 @@ export default function Home(){
             className={styles.header}
             />
             <div className={styles.categorias}>
-                <div className={styles['categorias-title']}>
-     
-                </div>
                 <div className={styles['categorias-container']}>
                     {categorias.map((categoria,index) =>(
                         <div key={index} onClick={()=> navigate(`/categoria/${categoria.id}`)}>
@@ -69,7 +66,7 @@ export default function Home(){
             <div >
            
                 <div className={styles.novidades}>
-                    <h2 className={styles.titulo}>Novidades</h2>
+                    <h2 className={styles.titulo}>Lançamentos</h2>
                     <div ref={divRef} className={classNames(styles.itens, {[styles.visible]: isVisible })}>
                     {itens?.map(item =>(
                     <Item key={item.id} {...item}/>
