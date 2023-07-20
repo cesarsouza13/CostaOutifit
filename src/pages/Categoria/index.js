@@ -1,8 +1,8 @@
-import Header from "components/Header";
+import Header from "../../components/Header/index.js";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import styles from './Categoria.module.scss'
-import Item from 'components/Item'
+import Item from '../../components/Item'
 import { useEffect } from "react";
 
 

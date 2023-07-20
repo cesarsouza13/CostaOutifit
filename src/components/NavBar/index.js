@@ -7,7 +7,7 @@ import {
 } from 'react-icons/ri'
 import { BiSearchAlt } from 'react-icons/bi';
 import { Link, useLocation, useNavigate} from 'react-router-dom'
-import Busca from 'components/Busca'
+import Busca from '../Busca/index.js'
 
 const iconeProps = {
     color: 'black',

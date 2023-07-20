@@ -1,11 +1,11 @@
-import Header from 'components/Header'
+import Header from '../../components/Header/index.js'
 import styles from './Home.module.scss'
 import geral from 'assets/geral.jpg'
-import Item from 'components/Item'
+import Item from '../../components/Item/index.js'
 
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import BannerFaleConosco from 'components/BannerFaleConosco'
+import BannerFaleConosco from '../../components/BannerFaleConosco/index.js'
 import { useState, useEffect, useRef } from 'react'
 
 import classNames from 'classnames'

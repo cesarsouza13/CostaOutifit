@@ -1,5 +1,5 @@
 
-import PaginaPadrao from "components/PaginaPadrao";
+import PaginaPadrao from "./components/PaginaPadrao/index";
 import Home from "pages/Home";
 import Categoria from "pages/Categoria";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
