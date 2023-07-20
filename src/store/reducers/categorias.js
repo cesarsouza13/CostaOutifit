@@ -1,7 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
-import tshirt from 'assets/categorias/header/t-shirt.jpg'
-import sneakers from 'assets/categorias/header/sneakers.jpg'
-
+import tshirt from '../../assets/categorias/header/t-shirt.jpg'
+import sneakers from '../../assets/categorias/header/sneakers.jpg'
 const estadoInicial = [{
     nome: 'Roupas',
     thumbnail: tshirt,

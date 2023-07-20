@@ -1,19 +1,19 @@
 import { createSlice } from '@reduxjs/toolkit';
 import {v4 as uuid} from 'uuid'
 
-import jack1 from 'assets/categorias/jack (1) (1).jpg'
-import jack2 from 'assets/categorias/jack (1).jpg'
-import jack3 from 'assets/categorias/jack (2).jpg'
-import jack5 from 'assets/categorias/jack (4).jpg'
+import jack1 from '../../assets/categorias/jack (1) (1).jpg'
+import jack2 from '../../assets/categorias/jack (1).jpg'
+import jack3 from '../../assets/categorias/jack (2).jpg'
+import jack5 from '../../assets/categorias/jack (4).jpg'
 
-import jordan1 from 'assets/categorias/jordan (1).jpg'
-import jordan2 from 'assets/categorias/jordan (2).jpg'
-import jordan3 from 'assets/categorias/jordan (3).jpg'
+import jordan1 from '../../assets/categorias/jordan (1).jpg'
+import jordan2 from '../../assets/categorias/jordan (2).jpg'
+import jordan3 from '../../assets/categorias/jordan (3).jpg'
 
 
 
-import jordan7 from 'assets/categorias/jordan (8).jpg'
-import jordan8 from 'assets/categorias/jordan.jpg'
+import jordan7 from '../../assets/categorias/jordan (8).jpg'
+import jordan8 from '../../assets/categorias/jordan.jpg'
 
 const estadoInicial = [{
   titulo: 'Camisa Jack',

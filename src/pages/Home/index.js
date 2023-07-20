@@ -1,6 +1,6 @@
 import Header from '../../components/Header/index.js'
 import styles from './Home.module.scss'
-import geral from 'assets/geral.jpg'
+import geral from '../../assets/geral.jpg'
 import Item from '../../components/Item/index.js'
 
 import { useNavigate } from 'react-router-dom'
