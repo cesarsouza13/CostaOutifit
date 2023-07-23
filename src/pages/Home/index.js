@@ -74,7 +74,6 @@ export default function Home(){
                         <div className={styles.busca}>
                             <Busca  />
                         </div>
-                       
                     </div>
                     
                     <div ref={divRef} className={classNames(styles.itens, {[styles.visible]: isVisible })}>

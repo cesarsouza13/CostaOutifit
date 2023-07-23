@@ -25,6 +25,41 @@ export default function Carrinho(){
         return {carrinho: carrinhoReduce, total: total}
     })
 
+    const  enviarCarrinho = () => {
+    const nomeDonoEmpresa = 'Costa_Outfit';
+    const valorTotalCarrinho = total;
+    let mensagem = `
+    Olá ${nomeDonoEmpresa},
+    
+    Seguem as informações dos produtos presentes no carrinho:
+    
+    **Produtos no Carrinho:**`;
+
+    carrinho.forEach((produto, index) => {
+        const {titulo, preco, categoria, id, quantidade, tamanhoSelecao } = produto;
+  
+        mensagem += `
+          ${index + 1}. **Produto:** ${titulo}
+             **Categoria:** ${categoria}
+             **Quantidade:** ${quantidade}
+             **Tamanho:** ${tamanhoSelecao}
+             **Valor Unitário (R$):** ${preco.toFixed(2)}
+             **Valor Total Produto (R$): ** ${(preco*quantidade).toFixed(2)}
+        `;
+      });
+      mensagem += `
+      **Total do Carrinho (R$): ${valorTotalCarrinho.toFixed(2)}**
+
+      Obrigado(a)!
+    `;
+
+    const numeroWhatsApp = '+5531982990835'
+    const urlWhatsApp = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${encodeURIComponent(mensagem)}`
+    window.open(urlWhatsApp, '_blank'); 
+    console.log(carrinho)
+        console.log(mensagem)
+        dispatch(resetarCarrinho())
+    }
     return(
         <div>
             <HeaderGeral 
@@ -41,7 +76,7 @@ export default function Carrinho(){
                         Subtotal: <strong>R$ {total.toFixed(2)}</strong>
                     </span>
                 </div>
-                <button className={styles.finalizar} onClick={() => dispatch(resetarCarrinho())}>
+                <button className={styles.finalizar} onClick={() => enviarCarrinho()}>
                         Finalizar Compra
                 </button>
             </div>
