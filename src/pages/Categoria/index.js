@@ -3,7 +3,7 @@ import HeaderGeral from "../../components/Header/headerGeral.js";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import styles from './Categoria.module.scss'
-import Item from '../../components/Item'
+import Item from '../../components/Item/index.js'
 import { useEffect } from "react";
 import { useState } from "react";
 import Modal from "../../components/Modal/index.js";
