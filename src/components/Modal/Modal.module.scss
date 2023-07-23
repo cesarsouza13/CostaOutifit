@@ -1,0 +1,163 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    animation: fadeIn 0.6s forwards;
+  }
+
+  
+@keyframes fadeIn {
+  to {
+    opacity: 1; 
+  }
+}
+
+  .modal-content {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    width: 55vw;
+    height: 80vh;
+
+    h2{
+        margin-top: 20px;
+        margin-bottom: 0;
+        font-size: 30px;
+    }
+
+    h3{
+        margin-top: 0;
+        font-size:15px;
+        color: #919191;
+    }
+    &-paragrafo{
+        font-size:18px;
+        margin-top: 30px;
+  
+    }
+
+  }
+
+  .container-descricao{
+    padding-right: 35px;
+  }
+
+  .container-tamanho{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+
+    button{
+        margin-right: 15px;
+        border-radius: 50%;
+        border:none ;
+        padding: 10px; /* Ajuste o valor do padding conforme necessário */
+        font-size: 16px;
+        cursor: pointer;
+        outline: none;
+
+        width: 50px; /* Ajuste o valor da largura do botão */
+        height: 50px; /* Ajuste o valor da altura do botão */
+        font-weight: bold;
+    }
+
+  
+    p{
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    button:hover{
+        border: 1px solid;
+    }
+
+   
+  }
+
+
+  .finalizar{
+    background-color: #041833;
+    border-radius: 36px;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    padding: 10px 20px;
+  }
+
+.container-imagem{
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  padding-left: 10px;
+
+
+ 
+  button{
+    border-radius: 50%;
+    
+  }
+
+  &-icons{
+    margin-top: 20px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+  }
+
+}
+
+
+.icone-close{
+  position: absolute; /* Define a posição absoluta para o ícone */
+  top: 10px; /* Ajuste o valor para posicionar o ícone verticalmente */
+  right: 10px; /* Ajuste o valor para posicionar o ícone horizontalmente */
+  cursor: pointer;
+  font-size: 24px;
+  color: #ffffff; /* Cor do ícone de fechar */
+  border-radius: 50%;
+  border: none;
+  background-color: red;
+}
+
+
+.btn-tamanho{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Cria 3 colunas com tamanhos iguais */
+  gap: 10px; /* Define o espaço entre os botões */
+
+}
+
+.selecionado{
+  border: 1px solid;
+color: #041833;
+  box-shadow: 0 0 15px rgb(43, 72, 238);
+
+}
+
+.alerta{
+  padding-top: 15px;
+  font-size: 15px;
+  color: red;
+}
+
+.imgOferta{
+  margin: 0 auto;
+  width: 300px;
+  height: 290px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.imgOferta.hidden{
+  opacity: 0;
+}

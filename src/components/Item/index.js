@@ -1,10 +1,12 @@
 import styles from './Item.module.scss'
-import {AiOutlineHeart, AiFillHeart, AiFillPlusCircle, AiFillMinusCircle} from 'react-icons/ai'
+import {AiOutlineHeart, AiFillHeart, AiFillPlusCircle, AiFillMinusCircle, AiOutlineEye} from 'react-icons/ai'
 import {FaCartPlus } from 'react-icons/fa'
 import { mudarFavorito } from '../../store/reducers/itens.js';
 import { useDispatch, useSelector} from 'react-redux';
 import { mudarCarrinho, mudarQuantidade } from '../../store/reducers/carrinho.js';
+
 import classNames from 'classnames';
+;
 
 const iconeProps = {
     size: 24,
@@ -16,7 +18,12 @@ const quantidadeProps = {
     color: '#1875e8'
 }
 
-export default function Item(props){
+const visuProps ={
+    size: 24,
+ 
+}
+
+export default function Item({item, setAbrirModal, setInfoModal, carrinho}){
 
     const {
         titulo,
@@ -25,9 +32,9 @@ export default function Item(props){
         favorito,
         categoria,
         id,
-        carrinho,
-        quantidade
-    } = props
+        quantidade,
+        tamanhoSelecao
+    } = item
     
     const dispatch = useDispatch()
 
@@ -37,9 +44,16 @@ export default function Item(props){
        dispatch(mudarFavorito(id));
     }
 
-    function resolverCarrinho(){
+    function carregarModal(){
+        setInfoModal(item);
+        setAbrirModal(true);
+
+    }
+
+  function resolverCarrinho(){
         dispatch(mudarCarrinho(id));
     }
+
     return(
         <div className={classNames(styles.item, {
             [styles.itemNoCarrinho]: carrinho
@@ -51,12 +65,17 @@ export default function Item(props){
                 <div className={styles['item-titulo']}>
                     <h2>{titulo}</h2>
                     <p>{categoria}</p>
+                    {carrinho ?(
+                        <div>Tamanho: {tamanhoSelecao}</div>
+                    ): ''}
                 </div>
                 <div className={styles['item-info']}>
+                  
                     <div className={styles['item-preco']}>
                         R$ {preco.toFixed(2)}
                     </div>
                     <div className={styles['item-acoes']}>
+
                         {favorito
                         ? <AiFillHeart {...iconeProps} color='#ff0000' className={styles['item-acao']} onClick={resolverFavorito}/>
                         : <AiOutlineHeart  {...iconeProps} className={styles['item-acao']}  onClick={resolverFavorito}/>
@@ -78,7 +97,7 @@ export default function Item(props){
                             {...iconeProps}
                             color={estaNoCarrinho ? '#1875e8' : iconeProps.color}
                             className={styles['item-acao']}
-                            onClick={resolverCarrinho}
+                            onClick={() => estaNoCarrinho ? resolverCarrinho() : carregarModal()}
                             />)
                         }
                    

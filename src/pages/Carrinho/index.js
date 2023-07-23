@@ -1,4 +1,5 @@
 import Header from '../../components/Header/index.js'
+import HeaderGeral from '../../components/Header/headerGeral.js';
 import styles from './Carrinho.module.scss'
 import { useSelector, useDispatch} from 'react-redux'
 import Item from '../../components/Item/index.js';
@@ -26,19 +27,19 @@ export default function Carrinho(){
 
     return(
         <div>
-            <Header 
+            <HeaderGeral 
             titulo='Carrinho de Compras'
             descricao='Confira os produtos que você adicionou ao carrinho.'
             />
             <div className={styles.carrinho}>
-                {carrinho.map(item => <Item key={item.id} {...item}  carrinho={true}/>)}
+                {carrinho.map(item => <Item key={item.id}  item={item} carrinho={true}/>)}
                 <div className={styles.total}>
                     <strong>
                         Resumo do Carrinho
                     </strong>
-                    <spna>
+                    <span>
                         Subtotal: <strong>R$ {total.toFixed(2)}</strong>
-                    </spna>
+                    </span>
                 </div>
                 <button className={styles.finalizar} onClick={() => dispatch(resetarCarrinho())}>
                         Finalizar Compra

@@ -2,18 +2,21 @@ import Header from '../../components/Header/index.js'
 import styles from './Home.module.scss'
 import geral from '../../assets/geral.jpg'
 import Item from '../../components/Item/index.js'
-
+import Busca from '../../components/Busca/index.js'
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import BannerFaleConosco from '../../components/BannerFaleConosco/index.js'
 import { useState, useEffect, useRef } from 'react'
 
 import classNames from 'classnames'
+import Modal from 'components/Modal/index.js'
 
 export default function Home(){
     const navigate = useNavigate()
     const categorias = useSelector(state => state.categorias);
     const [isVisible, setIsVisible] = useState(false);
+    const [abrirModal, setAbrirModal] = useState(false)
+    const [infoModal, setInfoModal] = useState([])
     const divRef = useRef(null);
     useEffect(() =>{
 
@@ -66,12 +69,20 @@ export default function Home(){
             <div >
            
                 <div className={styles.novidades}>
-                    <h2 className={styles.titulo}>Lançamentos</h2>
+                    <div className={styles.filtros}>
+                        <h2 className={styles.titulo}>Lançamentos</h2>
+                        <div className={styles.busca}>
+                            <Busca  />
+                        </div>
+                       
+                    </div>
+                    
                     <div ref={divRef} className={classNames(styles.itens, {[styles.visible]: isVisible })}>
                     {itens?.map(item =>(
-                    <Item key={item.id} {...item}/>
+                    <Item key={item.id} item={item} setAbrirModal={setAbrirModal} setInfoModal={setInfoModal}/>
                      ))}
                      </div>
+                    {abrirModal && <Modal infoModal={infoModal} setAbrirModal={setAbrirModal}/>}
        
        
                 </div>
