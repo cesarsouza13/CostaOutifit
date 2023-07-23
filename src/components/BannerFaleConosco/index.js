@@ -14,8 +14,8 @@ export default function BannerFaleConosco(){
                 <p>
  E aqui está o melhor: se você não encontrar a peça perfeita em nosso site, oferecemos a opção de encomendar uma roupa não disponibilizada em nosso DROP.
                 </p>
-                <button>
-                    Fale Conosco
+                <button className={`${styles['bounce-effect']} ${styles.btn}`}>
+                   <span>Fale Conosco</span>
                 </button>
             </div>
         </div>

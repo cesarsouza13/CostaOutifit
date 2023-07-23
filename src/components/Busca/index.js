@@ -21,7 +21,7 @@ export default function Busca(){
     const realizarPesquisa = () =>{
        
         setBotaoBusca(!botaoBusca);
-        console.log(botaoBusca)
+        
     }
     useEffect(() =>{
         dispatch(resetarBusca());
@@ -29,7 +29,7 @@ export default function Busca(){
     return(
         <div className={styles.caixabusca} >
             <input
-                className={botaoBusca ? styles.inputHabilitado : styles.input }
+                className={styles.inputHabilitado}
                 placeholder='O que você Procura'
                 value={busca}
                 onChange={evento => dispatch(mudarBusca(evento.target.value))}

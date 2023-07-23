@@ -50,7 +50,7 @@ return(
         </div>
 
         <div className={styles.icones}>
-                    <Busca />
+                   
                     <Link to='/carrinho' className={styles.iconeCarrinho}>
                         {location.pathname === '/carrinho'
                         ? <RiShoppingCartFill {...iconeProps} />

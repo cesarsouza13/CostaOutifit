@@ -65,14 +65,27 @@
     transform: translateX(0);
   }
 
-  .titulo{
-    text-align: center;
-  
-    padding: 16px;
-    font-size: 34px;
+ 
+
+.filtros{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0 ;
+
 }
 
+.titulo{
+  text-align: center;
+  padding: 16px;
+  font-size: 34px;
 
+}
+.busca{
+  text-align: center;
+  padding: 16px;
+
+}
 @media screen and (max-width: $mobile-sm){
 
 

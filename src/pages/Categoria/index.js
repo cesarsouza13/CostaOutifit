@@ -1,13 +1,16 @@
 import Header from "../../components/Header/index.js";
+import HeaderGeral from "../../components/Header/headerGeral.js";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import styles from './Categoria.module.scss'
 import Item from '../../components/Item'
 import { useEffect } from "react";
-
-
+import { useState } from "react";
+import Modal from "../../components/Modal/index.js";
 export default function Categoria() {
     const {nomeCategoria} = useParams()
+    const [abrirModal, setAbrirModal] = useState(false)
+    const [infoModal, setInfoModal] = useState([])
    
     const {categoria, itens} = useSelector(state => {
         const regexp = new RegExp(state.busca, 'i')
@@ -23,21 +26,23 @@ export default function Categoria() {
           }, []);
     return(
         <div>
-            <Header
+            <HeaderGeral
                 titulo={categoria.nome}
                 descricao={categoria.descricao}
-                imagem={categoria.header}        
+                imagem={categoria.header} 
+                className={styles.header}       
             />
             <div className={styles.titulo}>
               Produtos
             </div>
             <div className={styles.itens}>
                 {itens?.map(item =>(
-                   <Item key={item.id} {...item}/>
+                   <Item key={item.id} item={item}  setAbrirModal={setAbrirModal} setInfoModal={setInfoModal}/>
                 ))}
             
               
             </div>
+            {abrirModal && <Modal infoModal={infoModal} setAbrirModal={setAbrirModal}/>}
         </div>
     )
 }
