@@ -9,7 +9,7 @@ import BannerFaleConosco from '../../components/BannerFaleConosco/index.js'
 import { useState, useEffect, useRef } from 'react'
 
 import classNames from 'classnames'
-import Modal from 'components/Modal/index.js'
+import Modal from '../../components/Modal/index.js'
 
 export default function Home(){
     const navigate = useNavigate()

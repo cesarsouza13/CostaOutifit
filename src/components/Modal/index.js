@@ -6,7 +6,7 @@ import {GrNext, GrPrevious} from 'react-icons/gr'
 import { useDispatch } from 'react-redux'
 import { mudarCarrinho } from '../../store/reducers/carrinho.js';
 import { useState } from 'react'
-import { setarTamanho } from 'store/reducers/itens'
+import { setarTamanho } from '../../store/reducers/itens'
 
 export default function Modal ({infoModal, setAbrirModal}){
     const dispatch = useDispatch()
