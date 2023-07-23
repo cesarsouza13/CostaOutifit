@@ -95,6 +95,14 @@
 
 
   @media screen and (max-width: 1400px) {
+
+    .item-preco{
+      width: 100px;
+      padding: 0px 0px 16px 16px ;
+    }
+    .item-acao{
+      margin: 0;
+    }
     .item-titulo{
       h2{
         font-size: 30px;
@@ -105,5 +113,15 @@
         margin-top: 0;
       }
     }
+    .itemNoCarrinho {
+  
+    .item-acoes{
+        margin-right: 30px;
+        padding: 0;
+      }
 
+    
+     
+    
+    }
   }

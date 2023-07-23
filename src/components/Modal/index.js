@@ -5,17 +5,59 @@ import {AiOutlineClose} from 'react-icons/ai'
 import {GrNext, GrPrevious} from 'react-icons/gr'
 import { useDispatch } from 'react-redux'
 import { mudarCarrinho } from '../../store/reducers/carrinho.js';
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { setarTamanho } from '../../store/reducers/itens'
+import ModalImage from 'react-modal-image';
+import ReactImageMagnify from 'react-image-magnify'
 
 export default function Modal ({infoModal, setAbrirModal}){
     const dispatch = useDispatch()
     const [selecaoTamanho, setSelecaoTamnho] = useState(null)
     const [atualFoto, setAtualFoto] = useState(0)
     const [alerta, setAlerta] = useState(false)
+    const [mobile, setMobile] = useState(false)
+
+    useEffect(() =>{
+        const idTela = () =>{
+            setMobile(window.innerWidth <= 500);
+        }
+
+        window.addEventListener('resize', idTela);
+        idTela();
+
+        return () =>{
+            window.removeEventListener('resize', idTela)
+        }
+    },[])
     const iconeProps = {
         size: 24,
      
+    }
+
+    const renderizarSelecaoTamanho = () =>{
+
+        if(!mobile){
+            return  tamanho.map(tamanho =>(
+                <button
+                    onClick={() => selecionaTamanho(tamanho)}  
+                    key={tamanho} 
+                    className={tamanho === selecaoTamanho ? styles.selecionado : ''}>
+                     {tamanho}
+                     </button>
+            ))
+        }
+
+        else{
+            return (
+                <select onChange={(e) => selecionaTamanho(e.target.value)}>
+                  {tamanho.map((tamanho, index) => (
+                    <option key={index} value={tamanho}>
+                      {tamanho}
+                    </option>
+                  ))}
+                </select>
+              );
+        }
     }
 
     const closeProps = {
@@ -74,7 +116,22 @@ export default function Modal ({infoModal, setAbrirModal}){
                </button>
                
                 <div className={styles['container-imagem']}>
-                    <img  key={atualFoto} src={colecaoFoto[atualFoto]} className={styles.imgOferta} />
+                    {mobile ?  <img  key={atualFoto} src={colecaoFoto[atualFoto]} className={styles.imgOferta} />
+                            :     <ReactImageMagnify
+                            smallImage={{
+                            alt: 'Descrição da imagem',
+                            src: colecaoFoto[atualFoto],
+                            width: 300,
+                            height: 290
+                            }}
+                            largeImage={{
+                            src: colecaoFoto[atualFoto],
+                            width: 800,
+                            height: 600,
+                            }}
+                            enlargedImagePosition="beside"
+                        />}
+                 
                     <div className={styles['container-imagem-icons']}>
                         <button onClick={antFoto}>
                             <GrPrevious {...iconeProps}/>
@@ -83,7 +140,7 @@ export default function Modal ({infoModal, setAbrirModal}){
                             <GrNext {...iconeProps} />
                         </button>
                     </div>
-                 
+
                 </div>
                 <div className={styles['container-descricao']}>
                     <h2>{titulo}</h2>
@@ -95,15 +152,8 @@ export default function Modal ({infoModal, setAbrirModal}){
                         
                             <p>Tamanho</p>
                         </div>
-                        <div className={styles['btn-tamanho']}>
-                            {tamanho.map(tamanho =>(
-                                <button
-                                    onClick={() => selecionaTamanho(tamanho)}  
-                                    key={tamanho} 
-                                    className={tamanho === selecaoTamanho ? styles.selecionado : ''}>
-                                     {tamanho}
-                                     </button>
-                            ))}
+                        <div className={mobile ? styles.select : styles['btn-tamanho']}>
+                            {renderizarSelecaoTamanho()}
 
                         </div>
                         {alerta ? <p className={styles.alerta}>Selecione um Tamanho</p> : ''}
