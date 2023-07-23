@@ -1,17 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit';
 import {v4 as uuid} from 'uuid'
 
-import jack1 from '../../assets/categorias/jack (1) (1).jpg'
-import jack2 from '../../assets/categorias/jack (1).jpg'
-import jack3 from '../../assets/categorias/jack (2).jpg'
-import jack5 from '../../assets/categorias/jack (4).jpg'
+import jack1 from '../../assets/categorias/camisaum.jpg'
+import jack2 from '../../assets/categorias/camisadois.jpg'
+import jack3 from '../../assets/categorias/camisatres.jpg'
+import jack5 from '../../assets/categorias/camisaquatro.jpg'
 
-import jordan1 from '../../assets/categorias/jordan (1).jpg'
-import jordan2 from '../../assets/categorias/jordan (2).jpg'
-import jordan3 from '../../assets/categorias/jordan (3).jpg'
+import jordan1 from '../../assets/categorias/tenisum.jpg'
+import jordan2 from '../../assets/categorias/tenisdois.jpg'
+import jordan3 from '../../assets/categorias/tenistres.jpg'
 
-import jordan7 from '../../assets/categorias/jordan (8).jpg'
-import jordan8 from '../../assets/categorias/jordan.jpg'
+import jordan7 from '../../assets/categorias/tesniquatro.jpg'
+import jordan8 from '../../assets/categorias/treniscinco.jpg'
 
 import vermelho from '../../assets/categorias/vermelho.jpg'
 import verde from '../../assets/categorias/verde.jpg'
