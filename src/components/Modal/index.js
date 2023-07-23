@@ -1,5 +1,4 @@
 import styles from './Modal.module.scss'
-import jack1 from '../../assets/categorias/jack (1) (1).jpg'
 import {BiCloset} from 'react-icons/bi'
 import {AiOutlineClose} from 'react-icons/ai'
 import {GrNext, GrPrevious} from 'react-icons/gr'
