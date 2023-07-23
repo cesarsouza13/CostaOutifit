@@ -26,7 +26,7 @@ export default function Home(){
             const elementPosition = divRef.current.offsetTop;
 
             
-            console.log(scrollPosition,elementPosition)
+   
             if (scrollPosition >= elementPosition) {
                 setIsVisible(true);
               } else {
@@ -42,7 +42,7 @@ export default function Home(){
     const itens = useSelector(state => {
         const regexp = new RegExp(state.busca, 'i')
     
-            console.log(state)
+
            return state.itens.filter(item =>item.destaque == true && item.titulo.match(regexp))
            
         });

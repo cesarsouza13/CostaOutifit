@@ -1,6 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 import {v4 as uuid} from 'uuid'
 
+
+
 import jack1 from '../../assets/categorias/camisaum.jpg'
 import jack2 from '../../assets/categorias/camisadois.jpg'
 import jack3 from '../../assets/categorias/camisatres.jpg'
@@ -18,7 +20,7 @@ import verde from '../../assets/categorias/verde.jpg'
 import azul from '../../assets/categorias/azul.jpg'
 const estadoInicial = [{
   titulo: 'Camisa Jack',
-  foto: jack1,
+  foto: '',
   colecaoFoto: [jack1, vermelho, verde, azul],
   favorito: false,
   preco: 285,
@@ -29,7 +31,7 @@ const estadoInicial = [{
   tamanhoSelecao: ''
 }, {
   titulo: 'Camisa Jack',
-  foto: jack2,
+  foto: '',
   colecaoFoto: [jack2, vermelho, verde, azul],
   favorito: false,
   preco: 285,
@@ -40,7 +42,7 @@ const estadoInicial = [{
   tamanhoSelecao: ''
 },{
   titulo: 'Camisa Jack',
-  foto: jack3,
+  foto: '',
   colecaoFoto: [jack3, vermelho, verde, azul],
   favorito: false,
   preco: 285,
@@ -51,7 +53,7 @@ const estadoInicial = [{
   tamanhoSelecao: ''
 }, {
   titulo:'Camisa Jack',
-  foto: jack5,
+  foto: '',
   colecaoFoto: [jack5, vermelho, verde, azul],
   favorito: false,
   preco: 285,
@@ -62,7 +64,7 @@ const estadoInicial = [{
 },
 {
   titulo: 'Tenis Jordan',
-  foto: jordan1,
+  foto: '',
   colecaoFoto: [jordan1, vermelho, verde, azul],
   favorito: false,
   preco: 285,
@@ -74,7 +76,7 @@ const estadoInicial = [{
 }, 
 {
   titulo: 'Tenis Jordan',
-  foto: jordan2,
+  foto: '',
   colecaoFoto: [jordan2, vermelho, verde, azul],
   favorito: false,
   preco: 285,
@@ -86,7 +88,7 @@ const estadoInicial = [{
 }, 
 {
   titulo: 'Tenis Jordan',
-  foto: jordan3,
+  foto: '',
   colecaoFoto: [jordan3, vermelho, verde, azul],
   favorito: false,
   preco: 285,
@@ -99,7 +101,7 @@ const estadoInicial = [{
 , 
 {
   titulo: 'Tenis Jordan',
-  foto: jordan7,
+  foto: '',
   colecaoFoto: [jordan7, vermelho, verde, azul],
   favorito: false,
   preco: 285,
@@ -110,7 +112,7 @@ const estadoInicial = [{
 },
 {
   titulo: 'Tenis Jordan',
-  foto: jordan8,
+  foto: '',
   colecaoFoto: [jordan8, vermelho, verde, azul],
   favorito: false,
   preco: 285,
@@ -119,6 +121,7 @@ const estadoInicial = [{
   tamanho: ['35', '36', '37', '38', '39', '40', '41','42', '43' ],
   tamanhoSelecao: ''
 },];
+
 
   const itensSlice = createSlice({
     name: 'itens',
@@ -131,14 +134,21 @@ const estadoInicial = [{
         })
       },
       setarTamanho: (state, {payload}) =>{
-        console.log(payload.infoModal.id, payload.selecaoTamanho)
+      
         state = state.map(item =>{
           if(item.id === payload.infoModal.id) item.tamanhoSelecao =  payload.selecaoTamanho
-          console.log( item.tamanhoSelecao)
+     
           return item;
+        })
+      },
+
+      setarFotos: (state, {payload}) =>{
+
+        state = state.map((item,index) =>{
+          item.foto = payload[index];
         })
       }
     }
   })
-  export const  {mudarFavorito, setarTamanho} = itensSlice.actions;
+  export const  {mudarFavorito, setarTamanho, setarFotos} = itensSlice.actions;
   export default itensSlice.reducer

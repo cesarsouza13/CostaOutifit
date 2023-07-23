@@ -95,12 +95,12 @@ export default function Modal ({infoModal, setAbrirModal}){
     }
     
     function selecionaTamanho(tamanho){
-        console.log(tamanho)
+      
         setSelecaoTamnho(tamanho)
     }
 
     const proxFoto = () =>{
-        console.log('tese')
+    
         setAtualFoto((prev) => (prev === 0 ? colecaoFoto.length - 1 : prev - 1));
     }
 

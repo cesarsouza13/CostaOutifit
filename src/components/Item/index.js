@@ -1,11 +1,12 @@
 import styles from './Item.module.scss'
 import {AiOutlineHeart, AiFillHeart, AiFillPlusCircle, AiFillMinusCircle, AiOutlineEye} from 'react-icons/ai'
 import {FaCartPlus } from 'react-icons/fa'
-import { mudarFavorito } from '../../store/reducers/itens.js';
+import { mudarFavorito, setarFotos } from '../../store/reducers/itens.js';
 import { useDispatch, useSelector} from 'react-redux';
 import { mudarCarrinho, mudarQuantidade } from '../../store/reducers/carrinho.js';
-
+import { getAllPhotoUrls } from 'service/service';
 import classNames from 'classnames';
+import { useEffect } from 'react';
 ;
 
 const iconeProps = {
@@ -49,7 +50,17 @@ export default function Item({item, setAbrirModal, setInfoModal, carrinho}){
         setAbrirModal(true);
 
     }
+    
+    useEffect(() => {
+        async function fetchPhotoUrl() {
+            const url = await getAllPhotoUrls();
+           dispatch(setarFotos(url))
+            console.log(url)
+          }
 
+          fetchPhotoUrl()
+          
+    },[])
   function resolverCarrinho(){
         dispatch(mudarCarrinho(id));
     }
