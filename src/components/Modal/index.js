@@ -49,6 +49,7 @@ export default function Modal ({infoModal, setAbrirModal}){
         else{
             return (
                 <select onChange={(e) => selecionaTamanho(e.target.value)}>
+                    <option>Selecione o Tamanho</option>
                   {tamanho.map((tamanho, index) => (
                     <option key={index} value={tamanho}>
                       {tamanho}

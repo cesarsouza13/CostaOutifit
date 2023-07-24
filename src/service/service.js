@@ -17,18 +17,16 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-console.log(app)
+
 const storage = getStorage(app);
 
 export async function getAllPhotoUrls() {
     try {
-        console.log(storage)
       const fotosRef = ref(storage)
       const fotosList = await listAll(fotosRef);
-      console.log(fotosList)
       const urlsPromises = fotosList.items.map((item) => getDownloadURL(item));
       const urls = await Promise.all(urlsPromises);
-      console.log(urls)
+     
       return urls;
     } catch (error) {
       // Tratar erros, se necessário
