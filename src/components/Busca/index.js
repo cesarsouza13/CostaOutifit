@@ -8,7 +8,7 @@ import { BiSearchAlt } from 'react-icons/bi';
 import { useState } from 'react'
 
 const iconePropsBusca = {
-    color: 'white',
+    color: 'black',
     size: 20
 }
 
@@ -30,7 +30,7 @@ export default function Busca(){
         <div className={styles.caixabusca} >
             <input
                 className={styles.inputHabilitado}
-                placeholder='O que você Procura'
+                placeholder='O que você procura?'
                 value={busca}
                 onChange={evento => dispatch(mudarBusca(evento.target.value))}
             />

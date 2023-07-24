@@ -26,7 +26,7 @@ return(
     <div className={styles.container}>
     
     <nav className={styles.nav}>
-
+        <div></div>
         <div className={styles.links}>
             <div >
                 <Link to='/' className={classNames(styles.link,{
@@ -45,21 +45,17 @@ return(
                     Sneakers
                 </Link>
             </div>
-          
-          
         </div>
-
         <div className={styles.icones}>
+            <Link to='/carrinho' className={styles.iconeCarrinho}>
+                {location.pathname === '/carrinho'
+                    ? <RiShoppingCartFill {...iconeProps} />
+                    : <RiShoppingCart2Line {...iconeProps} />
+                }
                    
-                    <Link to='/carrinho' className={styles.iconeCarrinho}>
-                        {location.pathname === '/carrinho'
-                        ? <RiShoppingCartFill {...iconeProps} />
-                        : <RiShoppingCart2Line {...iconeProps} />
-                        }
-                   
-                    </Link>
-                 
-            </div>
+            </Link>
+            <Busca  />
+        </div>
       
     </nav>
    

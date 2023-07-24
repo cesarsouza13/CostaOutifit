@@ -12,6 +12,7 @@
     justify-content: center;
     opacity: 0;
     animation: fadeIn 0.6s forwards;
+
   }
 
   
@@ -30,7 +31,8 @@
     padding: 16px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     width: 55vw;
-    height: 80vh;
+    height: 70vh;
+    margin-top: 60px;
 
     h2{
         margin-top: 20px;
@@ -190,7 +192,8 @@
 .selecionado{
   border: 1px solid;
 color: #041833;
-  box-shadow: 0 0 15px rgb(43, 72, 238);
+  box-shadow: 0 0 7px #262626;
+
 
 }
 
@@ -222,6 +225,7 @@ color: #041833;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     width: 40vw;
     height: 60vh;
+    margin: 0;
   }
 }
 
