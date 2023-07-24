@@ -134,16 +134,13 @@ const estadoInicial = [{
         })
       },
       setarTamanho: (state, {payload}) =>{
-      
         state = state.map(item =>{
           if(item.id === payload.infoModal.id) item.tamanhoSelecao =  payload.selecaoTamanho
      
           return item;
         })
       },
-
       setarFotos: (state, {payload}) =>{
-
         state = state.map((item,index) =>{
           item.foto = payload[index];
         })

@@ -1,3 +1,4 @@
+@import '../../styles/breakpoints.scss';
 .item {
     background-color: white;
     border: none;
@@ -124,4 +125,9 @@
      
     
     }
+  }
+  @media screen and (max-width: $mobile-sm){
+      .item-imagem{
+        width: 100%;
+      }
   }
