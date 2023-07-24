@@ -4,7 +4,7 @@ import {FaCartPlus } from 'react-icons/fa'
 import { mudarFavorito, setarFotos } from '../../store/reducers/itens.js';
 import { useDispatch, useSelector} from 'react-redux';
 import { mudarCarrinho, mudarQuantidade } from '../../store/reducers/carrinho.js';
-import { getAllPhotoUrls } from 'service/service';
+import { getAllPhotoUrls } from '../../service/service.js';
 import classNames from 'classnames';
 import { useEffect } from 'react';
 ;
