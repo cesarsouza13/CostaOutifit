@@ -72,7 +72,7 @@ export default function Home(){
                     <div className={styles.filtros}>
                         <h2 className={styles.titulo}>Lançamentos</h2>
                         <div className={styles.busca}>
-                            <Busca  />
+                          
                         </div>
                     </div>
                     

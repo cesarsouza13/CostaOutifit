@@ -55,7 +55,7 @@ export default function Item({item, setAbrirModal, setInfoModal, carrinho}){
         async function fetchPhotoUrl() {
             const url = await getAllPhotoUrls();
             dispatch(setarFotos(url))
-            console.log(url)
+  
           }
 
           fetchPhotoUrl()
